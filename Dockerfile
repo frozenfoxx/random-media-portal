@@ -13,9 +13,6 @@ RUN bundle install --system
 ADD . /app
 RUN bundle install --system
 
-# Copy media content into /data
-COPY ./content/ /data
-
 EXPOSE 4567
 
 CMD ["ruby", "portal.rb"]
