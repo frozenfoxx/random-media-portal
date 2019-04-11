@@ -11,7 +11,7 @@ ENV PORT 4567
 WORKDIR ${APP_HOME}
 
 # Install gems
-COPY Gemfile* ${APP_HOME}
+COPY Gemfile* ${APP_HOME}/
 RUN bundle install --system
 
 # Add source
