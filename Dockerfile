@@ -1,7 +1,21 @@
 # Base image
-FROM nginx:alpine
+FROM ruby:alpine
 
 # Information
 LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 
-COPY ./content/ /usr/share/nginx/html
+WORKDIR /app
+
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
+RUN bundle install --system
+
+ADD . /app
+RUN bundle install --system
+
+# Copy media content into /data
+COPY ./content/ /data
+
+EXPOSE 4567
+
+CMD ["ruby", "portal.rb"]
