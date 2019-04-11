@@ -4,15 +4,20 @@ FROM ruby:alpine
 # Information
 LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 
-WORKDIR /app
+ENV APP_HOME /app
+ENV HOME /root
+ENV PORT 4567
 
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
+WORKDIR ${APP_HOME}
+
+# Install gems
+RUN mkdir ${APP_HOME}
+COPY Gemfile* ${APP_HOME}
 RUN bundle install --system
 
-ADD . /app
-RUN bundle install --system
+# Add source
+COPY . /app
 
-EXPOSE 4567
+EXPOSE ${PORT}
 
 CMD ["ruby", "portal.rb"]
