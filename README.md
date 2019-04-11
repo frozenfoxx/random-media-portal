@@ -1,11 +1,11 @@
-# webportal-videoplayer
+# random-media-portal
 
-A captive web portal that randomly plays videos when visited.
+A captive web portal that randomly selects media to play.
 
 # Requirements
 
-* Nginx
-* Video files in WebM format
+* sinatra
+* media files
 
 # Installation
 
@@ -18,7 +18,7 @@ A captive web portal that randomly plays videos when visited.
 To build the Docker container, follow the following steps:
 
 ```
-docker build . webportal-videoplayer:latest
+docker build . random-media-portal:latest
 ```
 
 ## Run
@@ -30,6 +30,6 @@ docker run \
   --rm \
   -d \
   -p 80:80 \
-  -v /path/to/videos/:/data
-  webportal-videoplayer:latest
+  -v /path/to/content/:/data
+  random-media-portal:latest
 ```
