@@ -19,4 +19,4 @@ COPY . /app
 
 EXPOSE ${PORT}
 
-CMD ["ruby", "portal.rb"]
+CMD ["ruby", "app.rb"]
