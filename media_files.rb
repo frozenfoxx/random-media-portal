@@ -1,4 +1,4 @@
-module MediaFiles
+class MediaFiles
     def initialize(directory)
         @directory = directory
         @file_list = []
