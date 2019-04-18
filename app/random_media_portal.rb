@@ -8,9 +8,8 @@ class RandomMediaPortal < Sinatra::Base
         set :bind, '0.0.0.0'
         set :root, File.dirname(__FILE__)
         enable :logging
-        enable :sessions
-        # file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
-        # file.sync = true
+        file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
+        file.sync = true
     end
 
     get '/' do
