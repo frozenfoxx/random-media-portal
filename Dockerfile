@@ -19,4 +19,4 @@ COPY . /app
 
 EXPOSE ${PORT}
 
-CMD ["ruby", "app.rb"]
+CMD ["rackup", "-o 0.0.0.0", "-p ${PORT}"]
