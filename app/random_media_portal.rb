@@ -16,5 +16,5 @@ class RandomMediaPortal < Sinatra::Base
         erb :index
     end
 
-    run! if app_file == $0
+    run! if __FILE__ == $0
 end
