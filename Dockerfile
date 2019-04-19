@@ -4,8 +4,10 @@ FROM ruby:alpine
 # Information
 LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 
+# Environment variables
 ENV APP_HOME /app
 ENV HOME /root
+ENV HOST 0.0.0.0
 ENV PORT 4567
 
 WORKDIR ${APP_HOME}
@@ -17,6 +19,7 @@ RUN bundle install --system
 # Add source
 COPY . /app
 
+# Expose port
 EXPOSE ${PORT}
 
-CMD ["rackup", "-o 0.0.0.0", "-p ${PORT}"]
+ENTRYPOINT [ "./entrypoint.sh" ]

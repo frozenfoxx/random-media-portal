@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + "/app/random_media_portal"
+require File.dirname(__FILE__) + "/app"
 
 run RandomMediaPortal

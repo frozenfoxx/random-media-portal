@@ -5,7 +5,8 @@ require_relative 'media_files'
 class RandomMediaPortal < Sinatra::Base
     
     configure do
-        set :bind, '0.0.0.0'
+        set :bind, ENV["HOST"]
+        set :port, ENV["PORT"]
         set :root, File.dirname(__FILE__)
         enable :logging
         file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
