@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-require_relative 'media_files'
+require_relative 'media_directory'
 
 class RandomMediaPortal < Sinatra::Base
     
