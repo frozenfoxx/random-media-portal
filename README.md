@@ -23,7 +23,7 @@ docker build . -t random-media-portal:latest
 
 ## Run
 
-To run the Docker container of the webportal-videoplayer, run the following:
+To run the Docker container of the random-media-portal, run the following:
 
 ```
 docker run \
