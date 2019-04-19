@@ -3,11 +3,25 @@ class MediaDirectory
         @directory = directory
     end
 
+    def audio_files
+        # Return a list of all audio files
+
+        audio_types = "flac,mp3,wav"
+        Dir["#{@directory}/*.{#{audio_types}}"]
+    end
+
     def image_files
         # Return a list of all image files
 
         image_types = "gif,jpg,jpeg,png"
         Dir["#{@directory}/*.{#{image_types}}"]
+    end
+
+    def random_audio
+        # Returns a random audio file from the directory
+
+        choice = rand(0..audio_files.size-1)
+        audio_files[choice]
     end
 
     def random_image
