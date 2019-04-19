@@ -18,7 +18,7 @@ A captive web portal that randomly selects media to play.
 To build the Docker container, follow the following steps:
 
 ```
-docker build . random-media-portal:latest
+docker build . -t random-media-portal:latest
 ```
 
 ## Run
@@ -29,7 +29,7 @@ To run the Docker container of the webportal-videoplayer, run the following:
 docker run \
   --rm \
   -d \
-  -p 80:80 \
+  -p 4567:4567 \
   -v /path/to/content/:/data
   random-media-portal:latest
 ```
