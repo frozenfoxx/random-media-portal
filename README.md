@@ -4,7 +4,7 @@ A captive web portal that randomly selects media to play.
 
 # Requirements
 
-* sinatra
+* [Sinatra](http://sinatrarb.com/)
 * media files
 
 # Installation
