@@ -17,9 +17,22 @@ class RandomMediaPortal < Sinatra::Base
     # Default route
     get '/*' do
         media_directory = MediaDirectory.new(settings.media_directory)
-        @media_file = media_directory.random_video
 
-        erb :index
+        # Return a view based on mode
+        case settings.media_mode
+        when 'audio'
+            @media_file = media_directory.random_audio
+            erb :audio
+        when 'image'
+            @media_file = media_directory.random_image
+            erb :image
+        when 'video'
+            @media_file = media_directory.random_video
+            erb :video
+        else
+            status 500
+            body "Unsupported media mode: #{settings.media_mode}"
+        end
     end
 
     run! if __FILE__ == $0
