@@ -13,9 +13,10 @@ A captive web portal that randomly selects media to play.
 
 ## Environment Variables
 
-* `HOST`: adapter to listen on (default: `0.0.0.0`)
-* `MEDIA_MODE`: which media to serve (default: `video`, modes: `audio`,`image`, or `video`)
-* `PORT`: port to listen on (default: `4567`)
+* `HOST`:            adapter to listen on (default: `0.0.0.0`)
+* `MEDIA_DIRECTORY`: directory containing media to serve (default: `/data`)
+* `MEDIA_MODE`:      which media to serve (default: `video`, modes: `audio`,`image`, or `video`)
+* `PORT`:            port to listen on (default: `4567`)
 
 # Docker
 

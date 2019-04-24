@@ -22,6 +22,12 @@ class MediaDirectory
         Dir["#{@directory}/*.{#{image_types}}"]
     end
 
+    def has_mode?(mode)
+        # Checks if a mode is supported
+
+        @modes.member?(mode)
+    end
+
     def random_audio
         # Returns a random audio file from the directory
 

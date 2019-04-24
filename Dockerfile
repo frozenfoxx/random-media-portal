@@ -8,6 +8,7 @@ LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 ENV APP_HOME /app
 ENV HOME /root
 ENV HOST 0.0.0.0
+ENV MEDIA_DIRECTORY /data
 ENV MEDIA_MODE video
 ENV PORT 4567
 
