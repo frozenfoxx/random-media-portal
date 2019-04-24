@@ -1,6 +1,11 @@
 class MediaDirectory
     def initialize(directory)
         @directory = directory
+        @modes = [
+            'audio',
+            'image',
+            'video'
+        ]
     end
 
     def audio_files
@@ -44,4 +49,6 @@ class MediaDirectory
         video_types = "avi,mkv,mp4,webm"
         Dir["#{@directory}/*.{#{video_types}}"]
     end
+
+    attr_reader :modes
 end
