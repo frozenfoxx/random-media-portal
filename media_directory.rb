@@ -11,7 +11,7 @@ class MediaDirectory
     def audio_files
         # Return a list of all audio files
 
-        audio_types = "flac,mp3,wav"
+        audio_types = "mp3,ogg,wav"
         Dir["#{@directory}/*.{#{audio_types}}"]
     end
 
@@ -32,27 +32,27 @@ class MediaDirectory
         # Returns a random audio file from the directory
 
         choice = rand(0..audio_files.size-1)
-        audio_files[choice]
+        audio_files[choice].delete_prefix('"').delete_suffix('"')
     end
 
     def random_image
         # Returns a random image file from the directory
 
         choice = rand(0..image_files.size-1)
-        image_files[choice]
+        image_files[choice].delete_prefix('"').delete_suffix('"')
     end
 
     def random_video
         # Returns a random video file from the directory
 
         choice = rand(0..video_files.size-1)
-        video_files[choice]
+        video_files[choice].delete_prefix('"').delete_suffix('"')
     end
 
     def video_files
         # Return a list of all video files
 
-        video_types = "avi,mkv,mp4,webm"
+        video_types = "mp4,ogg,webm"
         Dir["#{@directory}/*.{#{video_types}}"]
     end
 
