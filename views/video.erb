@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <p>
+            <video controls autoplay loop>
+                <source src="<%= @media_file %>" type="video/<%= @media_file.split('.').last %>">
+                Your browser does not support the video tag.
+            </video>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <p>
+            <audio controls autoplay loop>
+                <source src="<%= @media_file %>" type="audio/<%= @media_file.split('.').last %>">
+                Your browser does not support the audio tag.
+            </audio>
+        </p>
+    </body>
+</html>
