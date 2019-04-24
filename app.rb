@@ -5,10 +5,10 @@ class RandomMediaPortal < Sinatra::Base
     
     configure do
         set :bind, ENV["HOST"]
-        set :media_directory, ENV["MEDIA_DIRECTORY"]
         set :media_mode, ENV["MEDIA_MODE"]
         set :port, ENV["PORT"]
         set :root, File.dirname(__FILE__)
+        set :public_folder, ENV["MEDIA_DIRECTORY"]
         enable :logging
         file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
         file.sync = true
@@ -16,18 +16,20 @@ class RandomMediaPortal < Sinatra::Base
 
     # Default route
     get '/*' do
-        media_directory = MediaDirectory.new(settings.media_directory)
+        media_directory = MediaDirectory.new(settings.public_folder)
 
         # Return a view based on mode
         case settings.media_mode
         when 'audio'
             @media_file = media_directory.random_audio
+            @media_extension = @media_file.split('.').last
             erb :audio
         when 'image'
             @media_file = media_directory.random_image
             erb :image
         when 'video'
             @media_file = media_directory.random_video
+            @media_extension = @media_file.split('.').last
             erb :video
         else
             status 500

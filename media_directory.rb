@@ -32,21 +32,21 @@ class MediaDirectory
         # Returns a random audio file from the directory
 
         choice = rand(0..audio_files.size-1)
-        audio_files[choice].delete_prefix('"').delete_suffix('"')
+        File.basename(audio_files[choice]).delete_prefix('"').delete_suffix('"')
     end
 
     def random_image
         # Returns a random image file from the directory
 
         choice = rand(0..image_files.size-1)
-        image_files[choice].delete_prefix('"').delete_suffix('"')
+        File.basename(image_files[choice]).delete_prefix('"').delete_suffix('"')
     end
 
     def random_video
         # Returns a random video file from the directory
 
         choice = rand(0..video_files.size-1)
-        video_files[choice].delete_prefix('"').delete_suffix('"')
+        File.basename(video_files[choice]).delete_prefix('"').delete_suffix('"')
     end
 
     def video_files
