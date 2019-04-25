@@ -4,14 +4,22 @@ A captive web portal that randomly selects media to play.
 
 # Requirements
 
+* [Ruby](https://www.ruby-lang.org/en/)
+* [Bundler](https://bundler.io/)
 * [Sinatra](http://sinatrarb.com/)
-* media files
-  * _Support formats_:
+* Media files
+  * _Supported formats_:
   * **Audio**: _mp3_, _ogg_, _wav_
   * **Image**: _gif_, _jpeg_, _jpeg_, _png_
   * **Video**: _mp4_, _ogg_, _webm_
 
 # Installation
+
+* Install Ruby
+* Clone this repo (`git clone https://gitlab.com/frozenfoxx/random-media-portal.git random-media-portal`)
+* Change into the directory (`cd random-media-portal`)
+* Install the system (`bundle install --system`)
+* Put your collection of media files in a location on disk (by default `/data` is assumed)
 
 # Operation
 
