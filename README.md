@@ -21,7 +21,7 @@ A captive web portal that randomly selects media to play.
 * Install the system (`bundle install --system`)
 * Put your collection of media files in a location on disk (by default `/data` is assumed)
 
-# Operation 
+# Operation
 
 To launch the server with default settings simply use `./serve`. For greater control, use the Environment Variables to adjust execution.
 
@@ -30,6 +30,7 @@ To launch the server with default settings simply use `./serve`. For greater con
 * `HOST`:            adapter to listen on (default: `0.0.0.0`)
 * `MEDIA_DIRECTORY`: directory containing media to serve (default: `/data`)
 * `MEDIA_MODE`:      which media to serve (default: `video`, modes: `audio`,`image`, or `video`)
+* `PORT`:            which port to listen on (default: `4567`)
 
 # Docker
 

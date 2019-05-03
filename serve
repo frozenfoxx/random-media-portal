@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+HOST=${HOST:-"0.0.0.0"}
+PORT=${PORT:-"4567"}
+MEDIA_DIRECTORY=${MEDIA_DIRECTORY:-"/data"}
+MEDIA_MODE=${MEDIA_MODE:-"video"}
+
+rackup --env production -o ${HOST} -p ${PORT} >>log/production.log 2>&1
