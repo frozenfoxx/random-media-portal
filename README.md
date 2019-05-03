@@ -21,14 +21,15 @@ A captive web portal that randomly selects media to play.
 * Install the system (`bundle install --system`)
 * Put your collection of media files in a location on disk (by default `/data` is assumed)
 
-# Operation
+# Operation 
 
-## Environment Variables
+To launch the server with default settings simply use `./serve`. For greater control, use the Environment Variables to adjust execution.
+
+# Environment Variables
 
 * `HOST`:            adapter to listen on (default: `0.0.0.0`)
 * `MEDIA_DIRECTORY`: directory containing media to serve (default: `/data`)
 * `MEDIA_MODE`:      which media to serve (default: `video`, modes: `audio`,`image`, or `video`)
-* `PORT`:            port to listen on (default: `4567`)
 
 # Docker
 
@@ -37,7 +38,7 @@ A captive web portal that randomly selects media to play.
 To build the Docker container, follow the following steps:
 
 ```
-docker build . -t random-media-portal:latest
+docker build . -t frozenfoxx/random-media-portal:latest
 ```
 
 ## Run
@@ -50,7 +51,7 @@ docker run \
   -d \
   -p 4567:4567 \
   -v /path/to/content/:/data
-  random-media-portal:latest
+  frozenfoxx/random-media-portal:latest
 ```
 
 To run an alternative media mode, specify it with an environment variable:
@@ -62,7 +63,7 @@ docker run \
   -e MEDIA_MODE='audio' \
   -p 4567:4567 \
   -v /path/to/content/:/data
-  random-media-portal:latest
+  frozenfoxx/random-media-portal:latest
 ```
 
 Mounting a completely different media location is also quite easy:
@@ -75,5 +76,5 @@ docker run \
   -e MEDIA_MODE='image' \
   -p 4567:4567 \
   -v /path/to/content/:/app/public \
-  random-media-portal:latest
+  frozenfoxx/random-media-portal:latest
 ```
