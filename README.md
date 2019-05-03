@@ -61,7 +61,7 @@ docker run \
   -d \
   -e MEDIA_MODE='audio' \
   -p 4567:4567 \
-  -p /path/to/content/:/data
+  -v /path/to/content/:/data
   random-media-portal:latest
 ```
 
@@ -74,6 +74,6 @@ docker run \
   -e MEDIA_DIRECTORY=/app/public \
   -e MEDIA_MODE='image' \
   -p 4567:4567 \
-  -p /path/to/content/:/app/public \
+  -v /path/to/content/:/app/public \
   random-media-portal:latest
 ```
