@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative './media_directory'
 
 class RandomMediaPortal < Sinatra::Base
-    
+
     configure do
         set :bind, ENV["HOST"]
         set :media_mode, ENV["MEDIA_MODE"]
