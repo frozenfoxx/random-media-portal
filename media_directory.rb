@@ -32,21 +32,35 @@ class MediaDirectory
         # Returns a random audio file from the directory
 
         choice = rand(0..audio_files.size-1)
-        File.basename(audio_files[choice]).delete_prefix('"').delete_suffix('"')
+
+        strip_quotes(File.basename(audio_files[choice]))
     end
 
     def random_image
         # Returns a random image file from the directory
 
         choice = rand(0..image_files.size-1)
-        File.basename(image_files[choice]).delete_prefix('"').delete_suffix('"')
+
+        strip_quotes(File.basename(image_files[choice]))
     end
 
     def random_video
         # Returns a random video file from the directory
 
         choice = rand(0..video_files.size-1)
-        File.basename(video_files[choice]).delete_prefix('"').delete_suffix('"')
+
+        strip_quotes(File.basename(video_files[choice]))
+    end
+
+    def strip_quotes(quoted_string)
+        # Takes a string and strips the quotes from it
+        # Params
+        # +quoted_string+:: a media file string with quotes
+
+        quoted_string.sub(/^\"/, '').sub(/\"$/, '')
+
+        # In Ruby 2.5+ this method is preferable
+        # quoted_string.delete_prefix('"').delete_suffix('"')
     end
 
     def video_files
