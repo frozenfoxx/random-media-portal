@@ -15,7 +15,9 @@ WORKDIR ${APP_HOME}
 
 # Install gems
 COPY Gemfile* ${APP_HOME}/
-RUN bundle install --system
+RUN bundle update --bundler && \
+  bundle config set system 'true' && \
+  bundle install
 
 # Add source
 COPY . /app
