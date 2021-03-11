@@ -1,5 +1,7 @@
 # random-media-portal
 
+[![Build Status](https://cloud.drone.io/api/badges/frozenfoxx/random-media-portal/status.svg?ref=refs/heads/main)](https://cloud.drone.io/frozenfoxx/random-media-portal)
+
 A captive web portal that randomly selects media to play.
 
 # Requirements
