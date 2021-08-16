@@ -1,32 +1,32 @@
 # Base image
-FROM ruby:alpine
+FROM ruby:3-alpine3.13
 
 # Information
 LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 
 # Environment variables
-ENV APP_HOME=/app \
-  BUILD_DEPENDENCIES="build-base ruby-dev" \
+ENV BUILD_DEPENDENCIES="build-base ruby-dev" \
   HOST=0.0.0.0 \
   MEDIA_DIRECTORY=/data \
   MEDIA_MODE=video \
   PORT=4567
 
-WORKDIR ${APP_HOME}
+WORKDIR /usr/src/app
+
+# Throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
 
 # Install build dependencies
 RUN apk -U --no-cache --virtual .build-deps \
   add ${BUILD_DEPENDENCIES}
 
-# Install gems
-COPY Gemfile* ${APP_HOME}/
+# Install
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
+COPY . .
 
 # Cleanup build dependencies
 RUN apk del .build-deps
-
-# Add source
-COPY . /app
 
 # Expose port
 EXPOSE ${PORT}
