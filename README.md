@@ -1,6 +1,6 @@
 # random-media-portal
 
-[![Build Status](https://cloud.drone.io/api/badges/frozenfoxx/random-media-portal/status.svg?ref=refs/heads/main)](https://cloud.drone.io/frozenfoxx/random-media-portal)
+[![Actions Status](https://github.com/frozenfoxx/random-media-portal/workflows/build/badge.svg)](https://github.com/frozenfoxx/random-media-portal/actions)
 
 A captive web portal that randomly selects media to play.
 
@@ -18,7 +18,7 @@ A captive web portal that randomly selects media to play.
 # Installation
 
 * Install Ruby
-* Clone this repo (`git clone https://gitlab.com/frozenfoxx/random-media-portal.git random-media-portal`)
+* Clone this repo (`git clone https://github.com/frozenfoxx/random-media-portal.git random-media-portal`)
 * Change into the directory (`cd random-media-portal`)
 * Install the system (`bundle install --system`)
 * Put your collection of media files in a location on disk (by default `/data` is assumed)
